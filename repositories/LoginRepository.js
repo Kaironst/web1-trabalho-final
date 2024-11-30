@@ -20,8 +20,18 @@ class LoginRepository{
         return row
     }
 
-    create(){
+    async findByUsuario(usuario) {
+    const [rows] = await db.query(
+        `SELECT * FROM cadastros
+        WHERE usuario = ?;
+        `,
+        [usuario]);
+    }
 
+    async create(){
+        const [row] = await db.query(
+            `INSERT INTO login (usuario, email, senha)`
+        )
     }
 
     update(){

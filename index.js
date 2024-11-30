@@ -20,6 +20,12 @@ app.use(express.json());
 
 app.use(routes);
 
+app.get("/", (request, response) => {
+  response
+    .status(200)
+    .sendFile(path.join(__dirname + "/../public/pages/index.html"));
+});
+
 app.listen(port, () => {
   console.log(`Servidor rodando em: http://localhost:${port}`);
 });
