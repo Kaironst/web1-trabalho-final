@@ -1,0 +1,47 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(180, 200, 230);
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 12px;
+    grid-template-areas: 
+    "form info info"
+    "form image image";
+    justify-items: stretch;
+    align-items: stretch;
+    width: 100vw;
+    height: 100vh;
+}
+
+#cadastro
+{
+    text-align: center;
+    display:flex;
+    background-color:   aliceblue;
+    border-radius:10px;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    align-items:center;
+    margin: 30px;
+    grid-area: form;
+    align-self:stretch;
+}
+
+
+#submit
+{
+    background-color:gray; 
+    border: none;
+    color: white;
+    padding: 15px 32px;  
+    font-size: 16px;
+    border-radius: 16px;
+}
+
+#submit:hover
+{
+ transition:1s;
+ background-color: green;
+}
