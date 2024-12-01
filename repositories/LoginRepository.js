@@ -39,20 +39,33 @@ class LoginRepository{
     
         
         const insertedId = result.insertId;
-        return {
-        id: insertedId,
-        usuario,
-        email,
-        senha,
-    };
+        return {id: insertedId,usuario,email,senha};
     }
 
-    update(){
+    async update(id,{usuario,email,senha}){
+        
+        await db.query(
+        `UPDATE cadastros SET 
+        usuario=?, email=?, senha=?
+        where id=?;
+        `,[usuario, email, senha, id]
+        );
 
+        const [newrow] = await db.query(
+            `SELECT * FROM cadastros
+            WHERE id = ?;
+            `,[id]
+        );
+        return newrow;
     }
 
-    delete(){
-
+    async delete(id){
+        const deleted = await db.query(
+            `DELETE FROM cadastros
+            WHERE id=?;
+            `,[id]
+        );
+        return deleted
     }
 }
 module.exports = new LoginRepository();
