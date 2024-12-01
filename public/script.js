@@ -4,14 +4,14 @@ document.getElementById("form").addEventListener("submit", function (event)
 
     const formData = 
     {
-      nome: document.getElementById("text").value,
+      usuario: document.getElementById("text").value,
       email: document.getElementById("email").value,
-      password: document.getElementById("password").value,
+      senha: document.getElementById("password").value,
     };
 
     console.log("Dados:", formData);
 
-    fetch("http://localhost:3000/cadastro", 
+    fetch("http://localhost:3000/login", 
     {
       method: "POST",
       headers: {
@@ -33,4 +33,3 @@ document.getElementById("form").addEventListener("submit", function (event)
         alert("Ocorreu um erro ao realizar o cadastro.");
       });
 });
-//nesse caso o código vai sermpre dar erro graças ao fato de que não há um lugar para receber a solicitação post

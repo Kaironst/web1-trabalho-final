@@ -20,6 +20,8 @@ app.use(express.json());
 
 app.use(routes);
 
+app.use(express.static('./public'))
+
 app.get("/", (request, response) => {
   response
     .status(200)
