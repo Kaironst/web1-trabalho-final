@@ -34,9 +34,7 @@ class LoginController{
         if (usuario) {
             const loginByUsuario = await LoginRepository.findByUsuario(usuario);
             if (loginByUsuario) {
-              return response
-                .status(400)
-                .json({ error: "O usuário já está em uso" });
+              return response.status(400).json({ error: "O usuário já está em uso" });
             }
         }
 

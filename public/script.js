@@ -11,7 +11,7 @@ document.getElementById("form").addEventListener("submit", function (event)
 
     console.log("Dados:", formData);
 
-    fetch("http://localhost:3000/login", 
+    fetch("http://localhost:3000/login", //login é o acesso a database
     {
       method: "POST",
       headers: {
@@ -20,7 +20,13 @@ document.getElementById("form").addEventListener("submit", function (event)
       body: JSON.stringify(formData),
     })
 
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.status===400){
+          alert("o usuário já existe")
+          throw new Error('o usuário já existe');
+          //a única ocasião em q o programa vai retornar o cód 400 e caso o usuário seja o mesmo ent acho e isso está ok.
+        }
+        return response.json()})
       .then((data) => 
       {
         console.log("Success:", data);
@@ -32,4 +38,5 @@ document.getElementById("form").addEventListener("submit", function (event)
         console.error("Error:", error);
         alert("Ocorreu um erro ao realizar o cadastro.");
       });
+
 });

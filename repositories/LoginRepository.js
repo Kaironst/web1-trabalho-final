@@ -24,6 +24,8 @@ class LoginRepository{
         WHERE usuario = ?;
         `,
         [usuario]);
+        
+        return  rows; //a checagem do usuário não tava acontecendo pq agnt esqueceu do return...
     }
 
     async create({usuario,email,senha}) {
@@ -35,13 +37,13 @@ class LoginRepository{
           [usuario, email, senha]
         );
     
-        // Retorna o ID do novo contato inserido e os dados inseridos
+        
         const insertedId = result.insertId;
         return {
         id: insertedId,
-       usuario,
-       email,
-       senha,
+        usuario,
+        email,
+        senha,
     };
     }
 

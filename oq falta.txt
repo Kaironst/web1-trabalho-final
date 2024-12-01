@@ -1,0 +1,5 @@
+-- terminar de cirar o update
+-- terminar de criar o delete
+-- criar um front end decente com páginas separadas de cadastro, atualização e deleção
+   //não deve ser tão tão difícil de criar páginas diferentes (só colocar o / da página e o html a ser acessado no index.js)
+   //(lembrar de deixar todos os arquivos estáticos do front end na pasta public!!!)
