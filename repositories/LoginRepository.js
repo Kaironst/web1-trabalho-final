@@ -11,7 +11,7 @@ class LoginRepository{
    async findById(id){
         const [row] = await db.query(
             `SELECT * FROM cadastros
-            WHERE login.id = ?;
+            WHERE cadastros.id = ?;
             `,
             [id]
         )
