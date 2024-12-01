@@ -10,10 +10,8 @@ class LoginRepository{
 
    async findById(id){
         const [row] = await db.query(
-            `SELECT contacts.*, categories.name AS category_name
-            FROM contacts
-            LEFT JOIN categories ON categories.id = contacts.category_id
-            WHERE contacts.id = ?;
+            `SELECT * FROM cadastros
+            WHERE login.id = ?;
             `,
             [id]
         )
@@ -28,10 +26,23 @@ class LoginRepository{
         [usuario]);
     }
 
-    async create(){
-        const [row] = await db.query(
-            `INSERT INTO login (usuario, email, senha)`
-        )
+    async create({usuario,email,senha}) {
+        const result = await db.query(
+          `
+          INSERT INTO cadastros (usuario, email, senha)
+          VALUES (?, ?, ?)
+          `,
+          [usuario, email, senha]
+        );
+    
+        // Retorna o ID do novo contato inserido e os dados inseridos
+        const insertedId = result.insertId;
+        return {
+        id: insertedId,
+       usuario,
+       email,
+       senha,
+    };
     }
 
     update(){

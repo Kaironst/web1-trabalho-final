@@ -11,7 +11,7 @@ const hostname = '127.0.0.1';
 const port = 3000;
 db.testConnection().catch((err) => {
   console.error(
-    "Não foi possível conectar ao banco de dados. Encerrando o aplicativo."
+    "Erro conectando no bd"
   );
   process.exit(1);
 });
@@ -23,9 +23,9 @@ app.use(routes);
 app.get("/", (request, response) => {
   response
     .status(200)
-    .sendFile(path.join(__dirname + "/../public/pages/index.html"));
+    .sendFile(path.join(__dirname + "/public/index.html"));
 });
 
 app.listen(port, () => {
-  console.log(`Servidor rodando em: http://localhost:${port}`);
+  console.log(`http://localhost:${port}`);
 });
