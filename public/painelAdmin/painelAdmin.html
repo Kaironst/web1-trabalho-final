@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./painelAdmin.css" rel="stylesheet"/>
+    <title>Document</title>
+</head>
+<body>
+    <!--sidbebar-->
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="javascript:void(0)" onclick="showEncontrar()">Encontrar</a>
+    <a href="javascript:void(0)" onclick="showCadastrar()">Cadastrar</a>
+    <a href="javascript:void(0)" onclick="showEditar()">Editar</a>
+    <a href="javascript:void(0)" onclick="showDeletar()">Deletar</a>
+  </div>
+  
+  <!--botão de abrir a sidebar-->
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">&#9776; Abrir menu</button>
+    
+    <!--parte inicial-->
+    <div id="initial">
+      <h2>Painel de admin</h2>
+      <p>Clique em uma das opções do menu para realizar uma operação</p>
+  </div>
+  
+  <!--cadastro-->
+  <div id="cadastrar" class="formularios">
+    <h2>Cadastrar Um Novo parceiro para a loja<h2><br/>
+          
+    <form id="formCadastrar" class="formCadastrar" onsubmit="return false">
+  
+      <label for="nome">Nome completo</label> <br/>
+      <input type="text" id="usuario" name="text" required/>
+      <br/><br/>
+      
+      <label for="email">Email</label> <br/>
+      <input type="email" id="email" name="email" required/>
+      <br/> <br/>
+  
+      <label for="password">Senha</label> <br/>
+      <input type="password" id="senha" name="password" required/>
+      <br/> <br/>
+          
+      <button type="submit" class="submit" id="submitCadastrar" onclick="requestData.cadastrar()">Continuar</button>
+    </form>
+  </div>
+  
+  <!--edição-->
+  <div id="editar" class="formularios">
+    <h2>Editar um dos parceiros da loja<h2><br/>
+          
+    <form id="formEditar" class="formEditar" onsubmit="return false">
+  
+      <label for="id">ID</label> <br/>
+      <input type="number" id="id" name="id" required/>
+      <br/><br/>
+  
+      <label for="nome">Nome completo</label> <br/>
+      <input type="text" id="usuario" name="text" required/>
+      <br/><br/>
+      
+      <label for="email">Email</label> <br/>
+      <input type="email" id="email" name="email" required/>
+      <br/> <br/>
+  
+      <label for="password">Senha</label> <br/>
+      <input type="password" id="senha" name="password" required/>
+      <br/> <br/>
+          
+      <button type="submit" class="submit" id="submitEditar" onclick="requestData.editar()">Continuar</button>
+    </form>
+  </div>
+  
+  <!--deleção-->
+  <div id="deletar" class="formularios">
+    <h2>Remover um dos parceiros da loja<h2><br/>
+          
+    <form id="formDeletar" class="formDeletar" onsubmit="return false">
+  
+      <label for="id">ID</label> <br/>
+      <input type="number" id="id" name="id" required/>
+      <br/><br/>
+  
+      <button type="submit" class="submit" id="confirmDeletar" onclick="requestData.deletar()">Tem certeza?</button>
+    </form>
+    <button class="submit" id="submitDeletar" onclick="deleteConfirmation()">Continuar</button>
+  </div>
+  
+  <!--encontrar-->
+  <div id="encontrar" class="formularios">
+    <h2>Encontrar todos os parceiros da loja<h2>
+    <button class="submit" id="submitEncontrarTudo" onclick="requestData.encontrarTodos()">Encontrar tudo</button>   
+    </br><h2>Encontrar Parceiros por ID<h2>   
+    <form id="formEncontrar" class="formEncontrar" onsubmit="return false">
+  
+      <label for="id">ID</label> <br/>
+      <input type="number" id="id" name="id" required/>
+      <br/><br/>
+  
+      <button type="submit" class="submit" id="submitEncontrarId" onclick="requestData.encontrarPorId()">Continuar</button>
+    </form>
+  </div>
+    <div id=response>
+        se vc esta vendo isso algo de errado ocorreu
+    </div>
+  <script src="./painelAdmin.js"></script>
+</body>
+</html>
