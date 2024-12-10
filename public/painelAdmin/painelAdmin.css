@@ -1,5 +1,7 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
+    background-color:rgb(31, 33, 40);
+    color: white;
    }
   
   /* The sidebar menu */
@@ -14,6 +16,10 @@ body{
    overflow-x: hidden; /* Disable horizontal scroll */
    padding-top: 60px; /* Place content 60px from the top */
    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+   border-style:solid;
+   border-color: #111;
+   border-right-color: rgb(11, 0, 84);
+   border-width: 4px;
  }
  
  /* The sidebar links */
@@ -44,15 +50,16 @@ body{
  .openbtn {
    font-size: 20px;
    cursor: pointer;
-   background-color: #111;
+   background-color: #473f6f;
    color: white;
    padding: 10px 15px;
+   border-radius: 30px;
    border: none;
    max-width: 150px;
  }
  
  .openbtn:hover {
-   background-color: #444;
+   background-color: #3b3c4f;
  }
  
  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -73,24 +80,26 @@ body{
  {
    font-size: 20px;
    cursor: pointer;
-   background-color: #111;
+   background-color: #605183;
    color: white;
    padding: 6px 12px;
+   border-radius: 10px;
    border: none;
    max-width: 150px;
  }
  .submit:hover
  {
-   background-color: #1c7d50;
+   background-color: #1c7d1c;
    transition: 0.15s;
  }
  
  .formularios
  {
-   background-color: #818181;
+   background-color: #2b2643;
+   color:white;
    text-align: center;
    display:flex;
-   border-radius:10px;
+   border-radius:30px;
    flex-direction: column;
    justify-content: center;
    align-items:center;
@@ -119,6 +128,7 @@ body{
  {
    display: none;
  }
+
  #deletar
  {
    display: none;
@@ -129,7 +139,9 @@ body{
  }
  #deletar #confirmDeletar
  {
-   display: none
+   display: none;
+   color:rgb(255, 0, 0);
+   background-color: rgb(99, 0, 0);
  }
  #encontrar
  {
